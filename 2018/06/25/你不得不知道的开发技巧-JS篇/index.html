@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>你不得不知道的开发技巧-JS篇 | XiaoMo</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="Write Less, Do More, Easy To Debug.">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="你不得不知道的开发技巧-JS篇 | XiaoMo">
+    <meta name="twitter:description" content="Write Less, Do More, Easy To Debug.">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="你不得不知道的开发技巧-JS篇 | XiaoMo">
+    <meta property="og:description" content="Write Less, Do More, Easy To Debug.">
+
+    
+    <meta name="author" content="XiaoMo">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="/css/user.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/avatar.jpg">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+
+    <link rel="canonical" href="https://xiaomocqk.github.io/2018/06/25/你不得不知道的开发技巧-JS篇/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 XiaoMo 的主页"><img src="/images/avatar.jpg" width="80" alt="XiaoMo logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for XiaoMo">XiaoMo</a></h1>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Write Less, Do More, Easy To Debug.</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客文</a></li>
+            
+              <li class="navigation__item"><a href="/favourite">黄金屋</a></li>
+            
+              <li class="navigation__item"><a href="/favourite/time.html">时光机</a></li>
+            
+              <li class="navigation__item"><a href="/favourite/image.html">幻想间</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+  <li class="navigation__item">
+    <a href="javascript:void(0);" title="我的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li> 
+
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/xiaomocqk" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="javascript:void(0);" title="上Twitter找我" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-slate"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2018-06-25T05:40:07.000Z" class="post-list__meta--date date">2018-06-25</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="tag-link" href="/tags/分享记录/">分享记录</a>
+ </span>
+      <span class="page-pv">
+       阅读 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">你不得不知道的开发技巧-JS篇</h1>
+  </header>
+
+  <section class="post">
+    <hr>
+<h4 id="1-使用-mock-js-时-post-请求参数-cache-不能为-false-否则不能正常拦截-（一般是）导致-status-404-错误"><a href="#1-使用-mock-js-时-post-请求参数-cache-不能为-false-否则不能正常拦截-（一般是）导致-status-404-错误" class="headerlink" title="1. 使用 mock.js 时, post 请求参数 cache 不能为 false , 否则不能正常拦截, （一般是）导致 status: 404 错误"></a>1. 使用 mock.js 时, post 请求参数 cache 不能为 false , 否则不能正常拦截, （一般是）导致 <code>status: 404</code> 错误</h4><h4 id="2-关于-export-与-import-的用法"><a href="#2-关于-export-与-import-的用法" class="headerlink" title="2. 关于 export 与 import 的用法"></a>2. 关于 export 与 import 的用法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 输出单个匿名函数或值</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;      <span class="comment">// A.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="number">100</span>                  <span class="comment">// $.js  或使用 var、const声明变量</span></span><br><span class="line">  </span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="keyword">import</span> fn <span class="keyword">from</span>  <span class="string">'A.js'</span>              <span class="comment">// B.js 一般这种情况，是需要使用 fn 时再执行它 fn()</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'A.js'</span>                       <span class="comment">// C.js 不给被引用的模块指定变量名, 这种情况一般 A.js 是一个立即执行函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 输出多个</span></span><br><span class="line"><span class="comment">// A.js 多个非匿名函数、变量</span></span><br><span class="line"><span class="keyword">export</span> a1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;</span><br><span class="line"><span class="keyword">export</span> a2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> NAME = <span class="string">'superman'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// A.js 多个变量</span></span><br><span class="line"><span class="keyword">let</span> a1 = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">let</span> a2 = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;a1, a2&#125;                     <span class="comment">// 错误语法：直接export a1 = 0; export a2 = 1;</span></span><br><span class="line">      </span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="keyword">import</span> &#123;a1, a2&#125; form <span class="string">'A.js'</span>         <span class="comment">//全引入</span></span><br><span class="line"><span class="keyword">import</span> &#123;a2, NAME&#125; <span class="keyword">from</span> <span class="string">'A.js'</span>       <span class="comment">//只引入其中一个</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-当我们需要一个全屏的遮罩层内部可以实现滚动条滚动-但是在阴影区域滚动又不能导致底下正常文档的滚动，可以解决的方法有"><a href="#3-当我们需要一个全屏的遮罩层内部可以实现滚动条滚动-但是在阴影区域滚动又不能导致底下正常文档的滚动，可以解决的方法有" class="headerlink" title="3. 当我们需要一个全屏的遮罩层内部可以实现滚动条滚动, 但是在阴影区域滚动又不能导致底下正常文档的滚动，可以解决的方法有:"></a>3. 当我们需要一个全屏的遮罩层内部可以实现滚动条滚动, 但是在阴影区域滚动又不能导致底下正常文档的滚动，可以解决的方法有:</h4><blockquote>
+<ul>
+<li>遮罩的阴影区和遮罩的内容区，在 <code>html</code> 结构上是非父子级关系，在阴影区阻止默认行为</li>
+<li>弹出遮罩的时候给 <code>body</code> 添加 <code>overflow: hidden</code>, 并记录此时 <code>body</code> 的 <code>scrollTop</code> 值,当退出遮罩的时候，去掉 <code>body</code> 的 <code>overflow:hidden</code> 并还原 <code>scrollTop</code> 值</li>
+</ul>
+</blockquote>
+<h4 id="4-使用-in-和-typeof-操作符"><a href="#4-使用-in-和-typeof-操作符" class="headerlink" title="4. 使用 in 和 typeof 操作符"></a>4. 使用 <code>in</code> 和 <code>typeof</code> 操作符</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'onclick'</span> <span class="keyword">in</span> <span class="built_in">window</span>                 <span class="comment">// true</span></span><br><span class="line"><span class="keyword">typeof</span> onclick                      <span class="comment">// 'object'</span></span><br><span class="line"></span><br><span class="line"><span class="string">'onwebkitanimationend'</span> <span class="keyword">in</span> <span class="built_in">window</span>    <span class="comment">// true</span></span><br><span class="line"><span class="keyword">typeof</span> onwebkitanimationend         <span class="comment">// 'object'</span></span><br><span class="line"></span><br><span class="line"><span class="string">'ontransitionend'</span> <span class="keyword">in</span> <span class="built_in">window</span>         <span class="comment">// true</span></span><br><span class="line"><span class="keyword">typeof</span> ontransitionend              <span class="comment">// 'object'</span></span><br><span class="line"></span><br><span class="line"><span class="string">'onpopstate'</span> <span class="keyword">in</span> <span class="built_in">window</span>              <span class="comment">// true</span></span><br><span class="line"><span class="keyword">typeof</span> onpopstate                   <span class="comment">// 'object'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果是判断支持那种前缀(-o-, -webkit-, -ms-):</span></span><br><span class="line"><span class="keyword">var</span> style = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>).style;</span><br><span class="line"></span><br><span class="line"><span class="string">'transition'</span> <span class="keyword">in</span> style              <span class="comment">// true</span></span><br><span class="line"><span class="keyword">typeof</span> style.transition            <span class="comment">// 'string'</span></span><br><span class="line"></span><br><span class="line"><span class="string">'-webkit-animation'</span> <span class="keyword">in</span> style       <span class="comment">// true</span></span><br><span class="line"><span class="keyword">typeof</span> style.WebkitAnimation       <span class="comment">// 'string'</span></span><br><span class="line"></span><br><span class="line"><span class="string">'-webkit-animation'</span> <span class="keyword">in</span> style       <span class="comment">// true</span></span><br><span class="line"><span class="keyword">typeof</span> style[<span class="string">'-webkit-animation'</span>]  <span class="comment">// 'string'</span></span><br></pre></td></tr></table></figure>
+<h4 id="5-使用-zepto-js-时以外发现，有些时候使用-el-trigger-eventName-可以触发，有些时候确要使用-el-triggerHandler-eventName-才能触发？"><a href="#5-使用-zepto-js-时以外发现，有些时候使用-el-trigger-eventName-可以触发，有些时候确要使用-el-triggerHandler-eventName-才能触发？" class="headerlink" title="5. 使用 zepto.js 时以外发现，有些时候使用 $el.trigger(eventName) 可以触发，有些时候确要使用 $el.triggerHandler(eventName) 才能触发？"></a>5. 使用 zepto.js 时以外发现，有些时候使用 <code>$el.trigger(eventName)</code> 可以触发，有些时候确要使用 <code>$el.triggerHandler(eventName)</code> 才能触发？</h4><p>– 暂时不知原因 –</p>
+<h4 id="6-使用-transition-属性实现下拉动效时，通常会在-css-部分设置元素-height-0-会在-js-部分添加"><a href="#6-使用-transition-属性实现下拉动效时，通常会在-css-部分设置元素-height-0-会在-js-部分添加" class="headerlink" title="6. 使用 transition 属性实现下拉动效时，通常会在 css 部分设置元素 { height: 0 }, 会在 js 部分添加"></a>6. 使用 <code>transition</code> 属性实现下拉动效时，通常会在 css 部分设置元素 <code>{ height: 0 }</code>, 会在 js 部分添加</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$el.css(&#123;<span class="string">'position'</span>: <span class="string">'absolute'</span>, <span class="string">'height'</span>: <span class="string">'auto'</span>, <span class="string">'opacity'</span>: <span class="string">'0'</span>&#125;);</span><br><span class="line"><span class="keyword">var</span> elHeight = $el.height();</span><br><span class="line">$el.prop(<span class="string">'style'</span>, <span class="string">''</span>).height( elHeight );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这样的写法本没什么问题，但是一些浏览器的表现并不一致。</span></span><br><span class="line"><span class="comment">// 会导致某些机型下，$el 的 opacity 仍为0，</span></span><br><span class="line"><span class="comment">// 宽度因为 position：absolute 而变成自适应，并不是我们期望的结果。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 解决办法：只设置 $el.css(&#123;'height':'auto''&#125;)</span></span><br></pre></td></tr></table></figure>
+<h4 id="7-swiper-js的基本使用"><a href="#7-swiper-js的基本使用" class="headerlink" title="7. swiper.js的基本使用"></a>7. swiper.js的基本使用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> swiperCommonOption = &#123;</span><br><span class="line">  direction: <span class="string">'vertical'</span>,</span><br><span class="line">  height: <span class="number">150</span> / <span class="number">375</span> * docFontsize * <span class="number">10</span>,</span><br><span class="line">  centeredSlides: <span class="literal">true</span>,             <span class="comment">// 滑动块居中</span></span><br><span class="line">  slidesPerView: <span class="number">5</span>,                 <span class="comment">// 可见的 item 数量</span></span><br><span class="line">  initialSlide: <span class="number">15</span>,</span><br><span class="line">  freeMode: <span class="literal">true</span>,</span><br><span class="line">  freeModeSticky: <span class="literal">true</span>,             <span class="comment">// 结束后边贴合</span></span><br><span class="line">  freeModeMomentumRatio: <span class="number">0.32</span>,      <span class="comment">// 默认1, 设置的值越大，当释放slide时的滑动距离越大。</span></span><br><span class="line">  freeModeMomentumVelocityRatio: <span class="number">1</span>, <span class="comment">// 默认1, 设置越大，释放后滑得越快</span></span><br><span class="line">  onInit: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">  onTouchMove: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">  onTransitionEnd:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="8-函数体内定义一个函数时，例如回调函数如-onload-、事件函数-onclick-等，需考虑闭包的影响，手动回收内存防止内存泄露（特别是图片上传-FileReader-的-onload-事件）："><a href="#8-函数体内定义一个函数时，例如回调函数如-onload-、事件函数-onclick-等，需考虑闭包的影响，手动回收内存防止内存泄露（特别是图片上传-FileReader-的-onload-事件）：" class="headerlink" title="8. 函数体内定义一个函数时，例如回调函数如 onload 、事件函数 onclick 等，需考虑闭包的影响，手动回收内存防止内存泄露（特别是图片上传 FileReader 的 onload 事件）："></a>8. 函数体内定义一个函数时，例如回调函数如 onload 、事件函数 onclick 等，需考虑闭包的影响，手动回收内存防止内存泄露（特别是图片上传 FileReader 的 onload 事件）：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> oA = <span class="built_in">document</span>.getElementById(<span class="string">'a'</span>);</span><br><span class="line">  oA.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    oA.onclick = <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 或者直接把click事件函数定义在外部</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> files = ev.target.files;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;files.length;i++)&#123;<span class="comment">// 采用 let 形成的闭包</span></span><br><span class="line">  <span class="keyword">const</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">  reader.readAsDataURL(files[ i ]);</span><br><span class="line">  reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    reader = <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="9-逻辑与-amp-amp-、逻辑或-、三元表达式-？-的执行顺序的优先级"><a href="#9-逻辑与-amp-amp-、逻辑或-、三元表达式-？-的执行顺序的优先级" class="headerlink" title="9. 逻辑与 &amp;&amp;、逻辑或 ||、三元表达式 ？: 的执行顺序的优先级"></a>9. 逻辑与 <code>&amp;&amp;</code>、逻辑或 <code>||</code>、三元表达式 <code>？:</code> 的执行顺序的优先级</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &amp;&amp; 优于 || 优于 ?:</span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">false</span> || <span class="literal">true</span>               <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="literal">false</span> || <span class="literal">true</span> &amp;&amp; <span class="literal">true</span>      <span class="comment">// true</span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">false</span> ? <span class="string">'1'</span>: <span class="string">'2'</span>            <span class="comment">// '2'</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">false</span> ? <span class="string">'1'</span>:<span class="string">'2'</span>             <span class="comment">// '1'</span></span><br></pre></td></tr></table></figure>
+<h4 id="10-尽可能使用-transform-translate3d-和-scale-代替位移和大小变化"><a href="#10-尽可能使用-transform-translate3d-和-scale-代替位移和大小变化" class="headerlink" title="10. 尽可能使用 transform: translate3d() 和 scale() 代替位移和大小变化"></a>10. 尽可能使用 <code>transform: translate3d()</code> 和 <code>scale()</code> 代替位移和大小变化</h4><h4 id="11-如何共享-window-sessionStorage-缓存数据-大前提肯定必须是同域"><a href="#11-如何共享-window-sessionStorage-缓存数据-大前提肯定必须是同域" class="headerlink" title="11. 如何共享 window.sessionStorage 缓存数据?(大前提肯定必须是同域)"></a>11. 如何共享 <code>window.sessionStorage</code> 缓存数据?(大前提肯定必须是同域)</h4><blockquote>
+<ul>
+<li><code>&lt;a hrf=&quot;/&quot;&gt;旧标签页面&lt;/a&gt;</code></li>
+<li><code>&lt;a hrf=&quot;/&quot; target=&quot;_blank&quot;&gt;新标签页面&lt;/a&gt;</code></li>
+<li>使用 <code>window.open()</code> 打开新标签</li>
+</ul>
+</blockquote>
+<h4 id="12-如需将-ajax-的返回值赋值给一个变量-a-那么不应该直接在-success-回调中直接-return-data-而应该取内部变量value赋值再-return-value-否则得到的-a-undefined"><a href="#12-如需将-ajax-的返回值赋值给一个变量-a-那么不应该直接在-success-回调中直接-return-data-而应该取内部变量value赋值再-return-value-否则得到的-a-undefined" class="headerlink" title="12. 如需将 ajax 的返回值赋值给一个变量 a, 那么不应该直接在 success 回调中直接 return data, 而应该取内部变量value赋值再 return value, 否则得到的 a === undefined"></a>12. 如需将 ajax 的返回值赋值给一个变量 a, 那么不应该直接在 success 回调中直接 <code>return data</code>, 而应该取内部变量value赋值再 <code>return value</code>, 否则得到的 <code>a === undefined</code></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> value;</span><br><span class="line">  $.ajax(&#123;</span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">      <span class="comment">//return data 错误.无效</span></span><br><span class="line">      value = data</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> value;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+<h4 id="13-使用选择器-better-picker-时-部分-android-机可能出现闪现-而不是过渡动画显现-的问题-这是由于源码对-show-方法采用的是-setTimeout-gt-0-的操作-只需要改延迟时间为10即可"><a href="#13-使用选择器-better-picker-时-部分-android-机可能出现闪现-而不是过渡动画显现-的问题-这是由于源码对-show-方法采用的是-setTimeout-gt-0-的操作-只需要改延迟时间为10即可" class="headerlink" title="13. 使用选择器 better-picker 时,部分 android 机可能出现闪现(而不是过渡动画显现)的问题, 这是由于源码对 show() 方法采用的是 setTimeout(()=&gt;{...},0) 的操作,只需要改延迟时间为10即可"></a>13. 使用选择器 better-picker 时,部分 android 机可能出现闪现(而不是过渡动画显现)的问题, 这是由于源码对 <code>show()</code> 方法采用的是 <code>setTimeout(()=&gt;{...},0)</code> 的操作,只需要改延迟时间为10即可</h4><h4 id="14-在-lt-iframe-gt-中引入百度地图时-有时候会出现强制跳转到非指定链接-需要在-lt-iframe-gt-标签中添加属性-security-quot-restricted-quot-sandbox-quot-quot-来阻止"><a href="#14-在-lt-iframe-gt-中引入百度地图时-有时候会出现强制跳转到非指定链接-需要在-lt-iframe-gt-标签中添加属性-security-quot-restricted-quot-sandbox-quot-quot-来阻止" class="headerlink" title="14. 在 &lt;iframe&gt; 中引入百度地图时, 有时候会出现强制跳转到非指定链接.需要在 &lt;iframe&gt; 标签中添加属性 security=&quot;restricted&quot; sandbox=&quot;&quot; 来阻止"></a>14. 在 <code>&lt;iframe&gt;</code> 中引入百度地图时, 有时候会出现强制跳转到非指定链接.需要在 <code>&lt;iframe&gt;</code> 标签中添加属性 <code>security=&quot;restricted&quot; sandbox=&quot;&quot;</code> 来阻止</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=<span class="string">"https://api.map.baidu.com/marker?location=26.0680890068,119.3112705072"</span></span><br><span class="line">  frameborder=<span class="string">"0"</span></span><br><span class="line">  security=<span class="string">"restricted"</span></span><br><span class="line">  sandbox=<span class="string">""</span></span><br><span class="line">&gt;</span><br><span class="line">&lt;<span class="regexp">/iframe&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="15-数组或者对象的排序之sort方法"><a href="#15-数组或者对象的排序之sort方法" class="headerlink" title="15. 数组或者对象的排序之sort方法:"></a>15. 数组或者对象的排序之sort方法:</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">0.5</span>, <span class="number">33</span>, <span class="number">21</span>, <span class="number">78</span>, <span class="number">0</span>, <span class="string">"87"</span>];</span><br><span class="line"><span class="comment">//从小到大:</span></span><br><span class="line">arr.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b);                    <span class="comment">// [0, 0.5, 1, 3, 21, 33, 78, "87"]</span></span><br><span class="line"><span class="comment">// 从大到小:</span></span><br><span class="line">arr.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> b - a);                    <span class="comment">// ["87", 78, 33, 21, 3, 1, 0.5, 0]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj=[&#123;<span class="attr">a</span>: <span class="number">3</span>&#125;, &#123;<span class="attr">a</span>: <span class="number">6</span>&#125;, &#123;<span class="attr">a</span>: <span class="string">'17'</span>&#125;, &#123;<span class="attr">a</span>: <span class="number">30</span>&#125;, &#123;<span class="attr">a</span>: <span class="number">2</span>&#125;, &#123;<span class="attr">a</span>: <span class="number">0.3</span>&#125;];</span><br><span class="line"><span class="comment">// 从小到大:</span></span><br><span class="line">obj.sort(<span class="function">(<span class="params">o1, o2</span>) =&gt;</span> o1.a - o2.a);            <span class="comment">// [&#123;a: 0.3&#125;, &#123;a: 2&#125;, &#123;a: 3&#125;, &#123;a: 6&#125;, &#123;a: "17"&#125;, &#123;a: 30&#125;]</span></span><br><span class="line"><span class="comment">//从大到小:</span></span><br><span class="line">obj.sort(<span class="function">(<span class="params">o1, o2</span>) =&gt;</span> o2.a - o1.a);            <span class="comment">// [&#123;a: 30&#125;, &#123;a: "17"&#125;, &#123;a: 6&#125;, &#123;a: 3&#125;, &#123;a: 2&#125;, &#123;a: 0.3&#125;]</span></span><br></pre></td></tr></table></figure>
+<h4 id="16-使用npm开发时-如若出现-can-not-find-XX-module-信息提示-但是这些模块并不是依赖模块时-这时应该考虑使用"><a href="#16-使用npm开发时-如若出现-can-not-find-XX-module-信息提示-但是这些模块并不是依赖模块时-这时应该考虑使用" class="headerlink" title="16. 使用npm开发时,如若出现 can not find XX module 信息提示, 但是这些模块并不是依赖模块时,这时应该考虑使用"></a>16. 使用npm开发时,如若出现 can not find XX module 信息提示, 但是这些模块并不是依赖模块时,这时应该考虑使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rimraf node_modules</span><br></pre></td></tr></table></figure>
+<p>删除, 然后再重新安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
+<h4 id="17-当遇到有-tab-按钮切换页面时，我们经常需要一个-tab-对应一个页面，且首次点击-tab-键时会首次获取页面的初始化数据，且再次点击时不会再请求。那么我们可以先把点击事件和放重复触发写完，然后再使用jquery的trigger函数，来触发首次进入整个页面时，要显示的页面。"><a href="#17-当遇到有-tab-按钮切换页面时，我们经常需要一个-tab-对应一个页面，且首次点击-tab-键时会首次获取页面的初始化数据，且再次点击时不会再请求。那么我们可以先把点击事件和放重复触发写完，然后再使用jquery的trigger函数，来触发首次进入整个页面时，要显示的页面。" class="headerlink" title="17. 当遇到有 tab 按钮切换页面时，我们经常需要一个 tab 对应一个页面，且首次点击 tab 键时会首次获取页面的初始化数据，且再次点击时不会再请求。那么我们可以先把点击事件和放重复触发写完，然后再使用jquery的trigger函数，来触发首次进入整个页面时，要显示的页面。"></a>17. 当遇到有 tab 按钮切换页面时，我们经常需要一个 tab 对应一个页面，且首次点击 tab 键时会首次获取页面的初始化数据，且再次点击时不会再请求。那么我们可以先把点击事件和放重复触发写完，然后再使用jquery的trigger函数，来触发首次进入整个页面时，要显示的页面。</h4><h4 id="18-在webkit内核的浏览器下-对-lt-input-type-quot-number-quot-gt-或type-”text”等-使用-oninput-事件可能出现报错-这是webkit浏览器的错误"><a href="#18-在webkit内核的浏览器下-对-lt-input-type-quot-number-quot-gt-或type-”text”等-使用-oninput-事件可能出现报错-这是webkit浏览器的错误" class="headerlink" title="18. 在webkit内核的浏览器下, 对&lt;input type=&quot;number&quot;&gt;(或type=”text”等)使用 oninput 事件可能出现报错(这是webkit浏览器的错误):"></a>18. 在webkit内核的浏览器下, 对<code>&lt;input type=&quot;number&quot;&gt;</code>(或type=”text”等)使用 oninput 事件可能出现报错(这是webkit浏览器的错误):</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"Failed to execute 'setSelectionRange' on 'HTMLInputElement': The input element's type ('number') does not support selection."</span></span><br><span class="line"><span class="comment">// 解决办法: $(input).on('input keyup')</span></span><br><span class="line"><span class="comment">// 其他参考答案: https://stackoverflow.com/questions/23012370/failed-to-execute-setselectionrange-on-htmlinputelement</span></span><br></pre></td></tr></table></figure>
+<h4 id="19-removeEventListener-的注意事项"><a href="#19-removeEventListener-的注意事项" class="headerlink" title="19. removeEventListener 的注意事项"></a>19. <code>removeEventListener</code> 的注意事项</h4><blockquote>
+<ul>
+<li>移除的事件所对应的函数必须是同一个(同一个地址), 即不能是匿名函数</li>
+<li>不能再事件函数绑定this, 即 fn.bind(obj)</li>
+</ul>
+</blockquote>
+<h4 id="20-当我们使用-webpack-去引用静态资源如图片时-有时候难免需要使用到变量去代替-即-require-imgUrl-但是直接引用的话-webpack会报错-解决办法是-imgUrl需要使用3个部分组成"><a href="#20-当我们使用-webpack-去引用静态资源如图片时-有时候难免需要使用到变量去代替-即-require-imgUrl-但是直接引用的话-webpack会报错-解决办法是-imgUrl需要使用3个部分组成" class="headerlink" title="20. 当我们使用 webpack 去引用静态资源如图片时, 有时候难免需要使用到变量去代替, 即 require(imgUrl), 但是直接引用的话, webpack会报错.解决办法是: imgUrl需要使用3个部分组成"></a>20. 当我们使用 webpack 去引用静态资源如图片时, 有时候难免需要使用到变量去代替, 即 <code>require(imgUrl)</code>, 但是直接引用的话, webpack会报错.解决办法是: <code>imgUrl</code>需要使用3个部分组成</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'../../'</span> + imgPath + <span class="string">'.png'</span>);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  '../../'   =&gt; 告诉webpack去哪里读取资源(显示声明)</span></span><br><span class="line"><span class="comment">  imgPath    =&gt; 文件的路径+名称</span></span><br><span class="line"><span class="comment">  '.png'     =&gt; 文件的后缀名(显示声明)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 或</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">'../images/'</span> + imgPath);</span><br></pre></td></tr></table></figure>
+<h4 id="有意思的比较"><a href="#有意思的比较" class="headerlink" title="* 有意思的比较"></a>* 有意思的比较</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> === <span class="literal">null</span>  <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span> === <span class="built_in">Object</span>  <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Array</span> === <span class="built_in">Array</span>  <span class="comment">// true</span></span><br><span class="line"><span class="built_in">document</span> === <span class="built_in">document</span>  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/06/25/你不得不知道的开发技巧-CSS篇/" title="你不得不知道的开发技巧-CSS篇章">你不得不知道的开发技巧-CSS篇章</a></h2>
+                <p class="excerpt">
+                
+                
+1. 关于移动端 css 样式：123456789101112// 不允许浏览器擅自改变字体大小:【font boosting】html&amp;#123;  -webkit-text-size-adjust: 100%;&amp;#125;// 否则当你设置了,如: [data-dpr=&#34;3&#34;] span&amp;#1
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-06-25T10:01:27.000Z" class="post-list__meta--date date">2018-06-25</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/06/25/你不得不知道的开发技巧-CSS篇/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/05/30/vue-about/" title="关于VUE的一些使用技巧">关于VUE的一些使用技巧</a></h2>
+                <p class="excerpt">
+                
+                
+前言Vue.js 是一套渐进式的 JavaScript MVVM框架，2014 年 2 月，其作者尤雨溪（Evan You）第一次将它作为实际的项目发布在 Github 上，在短短一周内就收获了几百个star，2016 年 9 月，Vue 2.0正式发布。截止目前为止( 2018 年 05 月 1
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-05-30T01:09:51.000Z" class="post-list__meta--date date">2018-05-30</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/分享记录/">分享记录</a>
+</span><a class="btn-border-small" href="/2018/05/30/vue-about/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2018 XiaoMo - 本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 基于 <a href="http://hexo.io">Hexo</a> 搭建，使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>
+       
+    
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+    
+
+
+    <!-- <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+    
+    
+</body>
+</html>
