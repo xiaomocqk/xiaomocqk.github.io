@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>关于VUE的一些使用技巧 | XiaoMo</title>
+    <title>构建一套完整的webpack4 | XiaoMo</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -15,11 +15,11 @@
     <meta name="description" content="Write Less, Do More, Easy To Debug.">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="关于VUE的一些使用技巧 | XiaoMo">
+    <meta name="twitter:title" content="构建一套完整的webpack4 | XiaoMo">
     <meta name="twitter:description" content="Write Less, Do More, Easy To Debug.">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="关于VUE的一些使用技巧 | XiaoMo">
+    <meta property="og:title" content="构建一套完整的webpack4 | XiaoMo">
     <meta property="og:description" content="Write Less, Do More, Easy To Debug.">
 
     
@@ -36,7 +36,7 @@
     <meta name="generator" content="hexo"/>
     
 
-    <link rel="canonical" href="https://xiaomocqk.github.io/2018/05/30/vue-about/"/>
+    <link rel="canonical" href="https://xiaomocqk.github.io/2018/07/16/构建一套完整的webpack4/"/>
 
                  
 </head>
@@ -145,21 +145,20 @@
 
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2018-05-30T01:09:51.000Z" class="post-list__meta--date date">2018-05-30</time> &#8226; <span class="post-meta__tags tags">于 
-  <a class="tag-link" href="/tags/分享记录/">分享记录</a>
- </span>
+      <time datetime="2018-07-16T03:36:31.000Z" class="post-list__meta--date date">2018-07-16</time> &#8226; <span class="post-meta__tags tags">于  </span>
       <span class="page-pv">
        阅读 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
       </span> 
    
     </div>
-    <h1 class="post-title">关于VUE的一些使用技巧</h1>
+    <h1 class="post-title">构建一套完整的webpack4</h1>
   </header>
 
   <section class="post">
-    <p><img src="/images/vue/logo.png" alt="vue-logo"></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Vue.js 是一套渐进式的 JavaScript MVVM框架，2014 年 2 月，其作者尤雨溪（<a href="http://evanyou.me/" target="_blank" rel="noopener">Evan You</a>）第一次将它作为实际的项目发布在 <a href="https://github.com/vuejs/vue" target="_blank" rel="noopener">Github</a> 上，在短短一周内就收获了几百个star，2016 年 9 月，Vue 2.0正式发布。截止目前为止( 2018 年 05 月 10 日 )，Vue.js 当前的 star 数已达到 <strong><em>93.6k</em></strong>，相比于其他两大老牌框架, 即 2013 年 Facebook 开源的 <a href="https://github.com/facebook/react" target="_blank" rel="noopener">React</a> <strong><em>95.4k</em></strong> ， 以及 2010 年 Google 开源的 <a href="https://github.com/angular/angular" target="_blank" rel="noopener">Angular</a> <strong><em>36.1k</em></strong> ，可见Vue.js非常受前端开发人员的青睐。</p>
-
+    <h4 id="生成-package-json-文件"><a href="#生成-package-json-文件" class="headerlink" title="生成 package.json 文件"></a>生成 <code>package.json</code> 文件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
+<h4 id="首先需要提前安装全局的包"><a href="#首先需要提前安装全局的包" class="headerlink" title="首先需要提前安装全局的包"></a>首先需要提前安装全局的包</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g webpack webpack-dev-server nrm</span><br><span class="line"><span class="comment">// webpack webpack-dev-server</span></span><br><span class="line"><span class="comment">// nrm               // [可选] 快速切换 npm 源</span></span><br></pre></td></tr></table></figure>
+<h4 id="安装必要的-devDependencies"><a href="#安装必要的-devDependencies" class="headerlink" title="安装必要的 devDependencies"></a>安装必要的 <code>devDependencies</code></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev webapck webpack-cli cross-env babel-core babel-loader babel-preset-env babel-eslint webpack-dev-server clean-webpack-plugin extract-text-webpack-plugin webpack-md5-hash optimize-css-assets-webpack-plugin html-loader css-loader style-loader postcss-loader autoprefixer file-loader url-loader less less-loader vue-loader vue-style-loader vue-template-compiler</span><br><span class="line"><span class="comment">// webapck webpack-cli</span></span><br><span class="line"><span class="comment">// cross-env</span></span><br><span class="line"><span class="comment">// babel-core babel-loader babel-preset-env babel-eslint</span></span><br><span class="line"><span class="comment">// webpack-dev-server</span></span><br><span class="line"><span class="comment">// clean-webpack-plugin</span></span><br><span class="line"><span class="comment">// extract-text-webpack-plugin</span></span><br><span class="line"><span class="comment">// webpack-md5-hash</span></span><br><span class="line"><span class="comment">// optimize-css-assets-webpack-plugin</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// html-loader</span></span><br><span class="line"><span class="comment">// css-loader</span></span><br><span class="line"><span class="comment">// style-loader</span></span><br><span class="line"><span class="comment">// autoprefixer</span></span><br><span class="line"><span class="comment">// file-loader url-loader</span></span><br><span class="line"><span class="comment">// postcss-loader</span></span><br><span class="line"><span class="comment">// less less-loader</span></span><br><span class="line"><span class="comment">// vue-loader vue-style-loader vue-template-compiler</span></span><br></pre></td></tr></table></figure>
+<h4 id="创建-babelrc-文件-并写入配置"><a href="#创建-babelrc-文件-并写入配置" class="headerlink" title="创建 .babelrc 文件, 并写入配置"></a>创建 <code>.babelrc</code> 文件, 并写入配置</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"presets"</span>: [<span class="string">"env"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   </section>
 
 </article>
@@ -167,33 +166,19 @@
 <section class="read-more">
            
     
-               
-            <div class="read-more-item">
-                <span class="read-more-item-dim">最近的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2018/06/25/你不得不知道的开发技巧-JS篇/" title="你不得不知道的开发技巧-JS篇">你不得不知道的开发技巧-JS篇</a></h2>
-                <p class="excerpt">
-                
-                
-文章同步于 我的 Segmentfault 笔记1. 使用 mock.js 时, post 请求参数 cache 不能为 false , 否则不能正常拦截, （一般是）导致 status: 404 错误2. 关于 export 与 import 的用法12345678910111213141516
-                &hellip;
-                </p>
-                <div class="post-list__meta"><time datetime="2018-06-25T05:40:07.000Z" class="post-list__meta--date date">2018-06-25</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/分享记录/">分享记录</a>
-</span><a class="btn-border-small" href="/2018/06/25/你不得不知道的开发技巧-JS篇/">继续阅读</a></div>
-                           
-            </div>
         
         
                
             <div class="read-more-item">
                 <span class="read-more-item-dim">更早的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2018/05/28/hello-world/" title="如何使用hexo发布博客文章">如何使用hexo发布博客文章</a></h2>
+                <h2 class="post-list__post-title post-title"><a href="/2018/06/25/你不得不知道的开发技巧-CSS篇/" title="你不得不知道的开发技巧-CSS篇">你不得不知道的开发技巧-CSS篇</a></h2>
                 <p class="excerpt">
                 
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+                
+文章同步于 我的 Segmentfault 笔记1. 关于移动端 css 样式：123456789101112// 不允许浏览器擅自改变字体大小:【font boosting】html&amp;#123;  -webkit-text-size-adjust: 100%;&amp;#125;// 否则当你设置了,如
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2018-05-28T05:56:16.490Z" class="post-list__meta--date date">2018-05-28</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/05/28/hello-world/">继续阅读</a></div>
+                <div class="post-list__meta"><time datetime="2018-06-25T10:01:27.000Z" class="post-list__meta--date date">2018-06-25</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/06/25/你不得不知道的开发技巧-CSS篇/">继续阅读</a></div>
                        
             </div>
         

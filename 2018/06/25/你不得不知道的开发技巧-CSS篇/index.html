@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>你不得不知道的开发技巧-CSS篇章 | XiaoMo</title>
+    <title>你不得不知道的开发技巧-CSS篇 | XiaoMo</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -15,11 +15,11 @@
     <meta name="description" content="Write Less, Do More, Easy To Debug.">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="你不得不知道的开发技巧-CSS篇章 | XiaoMo">
+    <meta name="twitter:title" content="你不得不知道的开发技巧-CSS篇 | XiaoMo">
     <meta name="twitter:description" content="Write Less, Do More, Easy To Debug.">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="你不得不知道的开发技巧-CSS篇章 | XiaoMo">
+    <meta property="og:title" content="你不得不知道的开发技巧-CSS篇 | XiaoMo">
     <meta property="og:description" content="Write Less, Do More, Easy To Debug.">
 
     
@@ -151,12 +151,12 @@
       </span> 
    
     </div>
-    <h1 class="post-title">你不得不知道的开发技巧-CSS篇章</h1>
+    <h1 class="post-title">你不得不知道的开发技巧-CSS篇</h1>
   </header>
 
   <section class="post">
     <hr>
-<h4 id="1-关于移动端-css-样式："><a href="#1-关于移动端-css-样式：" class="headerlink" title="1. 关于移动端 css 样式："></a>1. 关于移动端 css 样式：</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不允许浏览器擅自改变字体大小:【font boosting】</span></span><br><span class="line"><span class="selector-tag">html</span>&#123;</span><br><span class="line">  <span class="attribute">-webkit-text-size-adjust</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 否则当你设置了,如: </span></span><br><span class="line"><span class="selector-attr">[data-dpr="3"]</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 很有可能在 F12控制台看到, 样式浏览器是采用了,但是实际的大小却不是采用的数值30px（有时可尝试给元素添加 max-height:9999999px;）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 所有的表单元素 input/button/select/option/textarea 出除默认样式和背景</span></span><br><span class="line">&#123;<span class="attribute">-webkit-apperance</span>: none&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="文章同步于-我的-Segmentfault-笔记"><a href="#文章同步于-我的-Segmentfault-笔记" class="headerlink" title="文章同步于 我的 Segmentfault 笔记"></a>文章同步于 <a href="https://segmentfault.com/n/1330000011526619" target="_blank" rel="noopener">我的 Segmentfault 笔记</a></h4><h4 id="1-关于移动端-css-样式："><a href="#1-关于移动端-css-样式：" class="headerlink" title="1. 关于移动端 css 样式："></a>1. 关于移动端 css 样式：</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不允许浏览器擅自改变字体大小:【font boosting】</span></span><br><span class="line"><span class="selector-tag">html</span>&#123;</span><br><span class="line">  <span class="attribute">-webkit-text-size-adjust</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 否则当你设置了,如: </span></span><br><span class="line"><span class="selector-attr">[data-dpr="3"]</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 很有可能在 F12控制台看到, 样式浏览器是采用了,但是实际的大小却不是采用的数值30px（有时可尝试给元素添加 max-height:9999999px;）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 所有的表单元素 input/button/select/option/textarea 出除默认样式和背景</span></span><br><span class="line">&#123;<span class="attribute">-webkit-apperance</span>: none&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="2-文字的换行与否-此处使用less语法"><a href="#2-文字的换行与否-此处使用less语法" class="headerlink" title="2. 文字的换行与否(此处使用less语法)"></a>2. 文字的换行与否(此处使用less语法)</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 换行</span></span><br><span class="line"><span class="selector-class">.break</span>()&#123;</span><br><span class="line">  <span class="attribute">word-break</span>: break-all;</span><br><span class="line">  <span class="attribute">word-wrap</span>: break-word;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 不换行</span></span><br><span class="line"><span class="selector-class">.nowrap</span>()&#123;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="3-移动端开发以-rem-作为单位时-难免会出现-1px-的偏差，所有制作雪碧图时，图与图之间应适当留出-2-4px-的间隔隙"><a href="#3-移动端开发以-rem-作为单位时-难免会出现-1px-的偏差，所有制作雪碧图时，图与图之间应适当留出-2-4px-的间隔隙" class="headerlink" title="3. 移动端开发以 rem 作为单位时,难免会出现 1px 的偏差，所有制作雪碧图时，图与图之间应适当留出 2~4px 的间隔隙"></a>3. 移动端开发以 rem 作为单位时,难免会出现 1px 的偏差，所有制作雪碧图时，图与图之间应适当留出 2~4px 的间隔隙</h4><p>  <strong> (有待验证) </strong></p>
 <h4 id="4-解决iframe在ios设备上无法滚动-在iframe外包裹一层div并设置其css属性为："><a href="#4-解决iframe在ios设备上无法滚动-在iframe外包裹一层div并设置其css属性为：" class="headerlink" title="4. 解决iframe在ios设备上无法滚动, 在iframe外包裹一层div并设置其css属性为："></a>4. 解决iframe在ios设备上无法滚动, 在iframe外包裹一层div并设置其css属性为：</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">-webkit-overflow-scrolling</span>:touch;</span><br><span class="line"><span class="attribute">overflow</span>:auto;</span><br></pre></td></tr></table></figure>
@@ -172,6 +172,19 @@
 <section class="read-more">
            
     
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/07/16/构建一套完整的webpack4/" title="构建一套完整的webpack4">构建一套完整的webpack4</a></h2>
+                <p class="excerpt">
+                
+                生成 package.json 文件1npm init -y
+首先需要提前安装全局的包123npm install -g webpack webpack-dev-server nrm// webpack webpack-dev-server// nrm               // [可选] 快
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-07-16T03:36:31.000Z" class="post-list__meta--date date">2018-07-16</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/07/16/构建一套完整的webpack4/">继续阅读</a></div>
+                           
+            </div>
         
         
                
@@ -181,7 +194,7 @@
                 <p class="excerpt">
                 
                 
-1. 使用 mock.js 时, post 请求参数 cache 不能为 false , 否则不能正常拦截, （一般是）导致 status: 404 错误2. 关于 export 与 import 的用法12345678910111213141516171819202122// 1. 输出单个匿名
+文章同步于 我的 Segmentfault 笔记1. 使用 mock.js 时, post 请求参数 cache 不能为 false , 否则不能正常拦截, （一般是）导致 status: 404 错误2. 关于 export 与 import 的用法12345678910111213141516
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2018-06-25T05:40:07.000Z" class="post-list__meta--date date">2018-06-25</time> &#8226; <span class="post-list__meta--tags tags">于 
@@ -200,7 +213,7 @@
 
             <footer class="footer">
     <span class="footer__copyright">
-        &copy; 2018 XiaoMo - 本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+        &copy; 2019 XiaoMo - 本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
        
     </span>
     <span class="footer__copyright">
